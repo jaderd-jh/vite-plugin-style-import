@@ -6,7 +6,7 @@ import {
   AndDesignVueResolve,
   VantResolve,
   ElementPlusResolve,
-} from 'vite-plugin-style-import'
+} from '@jhqn/vite-plugin-style-import'
 
 export default (): UserConfigExport => {
   return {
