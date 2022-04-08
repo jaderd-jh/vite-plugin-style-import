@@ -32,10 +32,13 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: 'pnpm'
 
-      - name: Install Dependencies
-        run: pnpm install
+      - name: Gen npmrc
+        run: |
+          echo "@jhqn:registry=https://registry.npmjs.com/" >> ./.npmrc
+          echo "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> ./.npmrc
 
-      - name: Publish to NPM
-        run: pnpm -r publish --access public --no-git-checks
+      - name: Build & Publish
+        run: npm run release
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          REGISTRY: https://registry.npmjs.com/
