@@ -32,6 +32,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: 'pnpm'
 
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
+
       - name: Gen npmrc
         run: |
           echo "@jhqn:registry=https://registry.npmjs.com/" >> ./.npmrc
