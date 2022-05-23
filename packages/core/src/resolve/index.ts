@@ -1,5 +1,6 @@
 export * from './antd'
 export * from './antdv'
+export * from './antdMobile'
 export * from './elementPlus'
 export * from './vant'
 export * from './reactVant'
